@@ -49,6 +49,12 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Subtle background glows */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute -top-40 right-[20%] w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 left-[10%] w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-3xl" />
+      </div>
+
       {/* Main Content */}
       <main className="flex flex-1 items-center justify-center px-4 py-10 sm:px-10">
         <div className="flex w-full max-w-5xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-20">
@@ -122,10 +128,10 @@ export default function Home() {
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                   >
                     <OtpForm
-                      title="Verify OTP"
-                      subtitle="We've sent a 6-digit code to your registered mobile number"
-                      buttonText="Verify & Login"
-                      helperText="By continuing, you agree to SBI's Terms of Service"
+                      title="Verify it's you"
+                      subtitle="We sent a code to ****1234"
+                      buttonText="Verify & Sign In"
+                      helperText="Didn't get the code? Check your SMS"
                       onSubmit={handleOtpSubmit}
                       onBack={handleOtpBack}
                     />
